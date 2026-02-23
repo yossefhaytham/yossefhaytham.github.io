@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="ltr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yossef Haytham | data analyst portfolio</title>
-  <!-- simple outline icons via Feather (light, minimalist) -->
+  <title>يوسف هيثم | Data Analyst Portfolio</title>
+  <!-- simple outline icons (Feather) -->
   <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-  <!-- calm, professional font system -->
+  <!-- font: Inter as primary (similar to Amr Ayyad's clean sans) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..600&display=swap" rel="stylesheet">
@@ -18,44 +18,35 @@
     }
 
     body {
-      background: linear-gradient(145deg, #f0f5fb 0%, #e9f0f7 100%);
-      font-family: "Inter", system-ui, -apple-system, sans-serif;
-      color: #1e2b3c;
+      background: #faf7f2;  /* warm off-white background taken from amrayyad.github.io (soft cream) */
+      font-family: "Inter", system-ui, -apple-system, 'Segoe UI', sans-serif;
+      color: #2c3e4f;
       line-height: 1.5;
       font-weight: 400;
-      padding: 2rem 1.5rem;
-      min-height: 100vh;
+      padding: 2rem 1.2rem;
     }
 
-    /* main container — soft, airy */
     .container {
-      max-width: 1280px;
+      max-width: 1100px;
       margin: 0 auto;
       display: flex;
       flex-direction: column;
-      gap: 2rem;
+      gap: 2.2rem;
     }
 
-    /* ---------- glassmorphism base ---------- */
-    .glass-card {
-      background: rgba(255, 255, 255, 0.38);
-      backdrop-filter: blur(12px) saturate(180%);
-      -webkit-backdrop-filter: blur(12px) saturate(180%);
-      border-radius: 32px;
-      border: 1px solid rgba(255, 255, 255, 0.5);
-      box-shadow: 0 18px 35px -12px rgba(0, 20, 30, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.3) inset;
-      padding: 2rem 2.2rem;
-      transition: all 0.2s ease;
+    /* ----- cards with subtle warm white, no heavy glassmorphism (like reference) ----- */
+    .section-card {
+      background-color: #ffffffd9;    /* almost white with very slight transparency */
+      backdrop-filter: blur(2px);
+      border-radius: 36px;
+      padding: 2.2rem 2.4rem;
+      box-shadow: 0 10px 25px -12px rgba(0, 20, 30, 0.15), 0 0 0 1px rgba(240, 234, 226, 0.6) inset;
+      transition: all 0.15s;
+      border: 1px solid #fffefc;
     }
 
-    .glass-card:hover {
-      background: rgba(255, 255, 255, 0.45);
-      border-color: rgba(255, 255, 255, 0.7);
-      box-shadow: 0 22px 40px -14px rgba(20, 60, 90, 0.2);
-    }
-
-    /* header specific — profile row */
-    .profile-row {
+    /* header row — exactly like Amr's intro strip */
+    .intro-row {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
@@ -63,243 +54,188 @@
     }
 
     .avatar-frame {
-      flex-shrink: 0;
-      width: 120px;
-      height: 120px;
+      width: 130px;
+      height: 130px;
       border-radius: 50%;
-      background: rgba(255, 255, 255, 0.5);
-      backdrop-filter: blur(4px);
-      border: 2.5px solid rgba(255,255,255,0.8);
-      box-shadow: 0 12px 18px -10px rgba(0,40,60,0.2);
+      background: #eae3da;  /* warm neutral */
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
+      box-shadow: 0 8px 14px -6px rgba(90, 70, 60, 0.2);
+      border: 3px solid #ffffff;
     }
 
-    .avatar-placeholder {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      background: #cbd5e1;  /* soft grey while waiting for image */
-      color: #334155;
-      font-size: 2.5rem;
-      font-weight: 400;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    /* placeholder SVG icon (feather user) will be injected, but keep fallback */
     .avatar-placeholder svg {
-      width: 60px;
-      height: 60px;
-      stroke: #2c3e50;
+      width: 80px;
+      height: 80px;
+      stroke: #5a4f47;
       stroke-width: 1.2;
     }
 
-    .title-section h1 {
-      font-size: 2.8rem;
+    .intro-text h1 {
+      font-size: 3rem;
       font-weight: 500;
       letter-spacing: -0.02em;
-      color: #1c3b4f;
+      color: #1f2e3a;       /* deep but soft */
       margin-bottom: 0.2rem;
-      line-height: 1.2;
     }
 
-    .subhead {
-      font-size: 1.3rem;
+    .intro-tagline {
+      font-size: 1.35rem;
       font-weight: 330;
-      color: #2b4d62;
-      margin-bottom: 0.8rem;
+      color: #476b7f;        /* muted teal-blue from amr's site (his links) */
+      margin-bottom: 1rem;
     }
 
-    .contact-links {
+    .contact-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 1.8rem;
+      gap: 1.2rem 2rem;
       align-items: center;
-      margin-top: 0.5rem;
     }
 
-    .contact-item {
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #3c5a6b;
+      text-decoration: none;
+      font-size: 0.95rem;
+      background: #f0ede9;
+      padding: 0.35rem 1.2rem 0.35rem 0.9rem;
+      border-radius: 40px;
+      border: 1px solid #e5dfd8;
+    }
+
+    .contact-link i {
+      width: 18px;
+      height: 18px;
+      stroke: #3c5a6b;
+    }
+
+    .contact-link:hover {
+      background: #e8e1d9;
+      border-color: #cbbeb2;
+    }
+
+    /* ----- about section (exactly like "About Me" in reference) ----- */
+    .about-head {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-head i {
+      width: 32px;
+      height: 32px;
+      stroke: #3f6b81;
+    }
+
+    .about-head h2 {
+      font-size: 2rem;
+      font-weight: 450;
+      color: #1b3b4f;
+    }
+
+    .about-text p {
+      font-size: 1.12rem;
+      font-weight: 340;
+      color: #2c4556;
+      margin-bottom: 1.2rem;
+      max-width: 85%;
+    }
+
+    /* ----- skills grid: 4 columns as in reference (but content from resume) ----- */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin: 1.8rem 0 0.5rem;
+    }
+
+    .skill-group {
+      background-color: #fcf9f6;
+      border-radius: 26px;
+      padding: 1.4rem 1.3rem;
+      border: 1px solid #f0e8e0;
+    }
+
+    .skill-group h3 {
+      font-size: 1.2rem;
+      font-weight: 520;
+      margin-bottom: 1rem;
       display: flex;
       align-items: center;
       gap: 0.5rem;
-      color: #1f3a4b;
-      text-decoration: none;
-      font-size: 0.95rem;
-      background: rgba(255,255,255,0.3);
-      padding: 0.3rem 1rem 0.3rem 0.7rem;
-      border-radius: 40px;
-      border: 1px solid rgba(255,255,255,0.5);
-      transition: 0.1s;
+      color: #215267;
     }
 
-    .contact-item:hover {
-      background: rgba(255,255,255,0.7);
-      border-color: #ffffff;
-    }
-
-    .contact-item i {
-      width: 20px;
-      height: 20px;
-      stroke: #1f3a4b;
-      stroke-width: 1.5;
-    }
-
-    /* summary text */
-    .summary-text {
-      font-size: 1.1rem;
-      font-weight: 330;
-      color: #1d3443;
-      max-width: 85%;
-      margin-top: 0.6rem;
-    }
-
-    /* section headings with icon lines */
-    .section-header {
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-      margin-bottom: 1.8rem;
-    }
-
-    .section-header h2 {
-      font-size: 1.9rem;
-      font-weight: 420;
-      letter-spacing: -0.01em;
-      color: #173342;
-    }
-
-    .section-header i {
-      width: 28px;
-      height: 28px;
-      stroke: #234c61;
-      stroke-width: 1.3;
-    }
-
-    /* education & courses row */
-    .edu-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      justify-content: space-between;
-    }
-
-    .edu-item, .course-item {
-      background: rgba(255,255,255,0.2);
-      border-radius: 24px;
-      padding: 1.4rem 1.8rem;
-      border: 1px solid rgba(255,255,255,0.5);
-      flex: 1 1 240px;
-    }
-
-    .edu-item h3, .course-item h3 {
-      font-weight: 500;
-      font-size: 1.3rem;
-      margin-bottom: 0.6rem;
-      color: #153d4f;
-    }
-
-    .edu-meta, .course-meta {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      color: #2d4d60;
-      margin-top: 0.5rem;
-      font-size: 0.95rem;
-    }
-
-    .edu-meta i, .course-meta i {
-      width: 18px;
-      height: 18px;
-      stroke: #37657a;
-    }
-
-    /* skill clusters */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.5rem;
-      margin-top: 1rem;
-    }
-
-    .skill-cluster {
-      background: rgba(255,255,255,0.2);
-      border-radius: 28px;
-      padding: 1.6rem 1.4rem;
-      border: 1px solid rgba(255,255,255,0.5);
-    }
-
-    .skill-cluster h3 {
-      font-weight: 480;
-      font-size: 1.25rem;
-      margin-bottom: 1.2rem;
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      color: #123e52;
-    }
-
-    .skill-cluster h3 i {
+    .skill-group h3 i {
       width: 22px;
       height: 22px;
-      stroke: #1d5f7a;
+      stroke: #316d89;
     }
 
     .skill-items {
       display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem 0.9rem;
+      flex-direction: column;
+      gap: 0.5rem;
     }
 
-    .skill-tag {
-      background: rgba(255,255,255,0.45);
-      padding: 0.35rem 1rem;
-      border-radius: 40px;
-      font-size: 0.9rem;
-      font-weight: 400;
-      color: #173e51;
-      border: 1px solid rgba(255,255,255,0.7);
-      backdrop-filter: blur(2px);
+    .skill-item {
+      font-size: 0.95rem;
+      color: #2b4e63;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
 
-    /* projects grid (4 cards) */
+    .skill-item::before {
+      content: "—";
+      color: #aab9c4;
+      font-weight: 200;
+    }
+
+    /* mimic Amr's extra personal skills with a dash */
+
+    /* ----- projects section : exactly 4 cards (like reference) ----- */
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      margin: 1rem 0 0.5rem;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.8rem;
+      margin-top: 1.5rem;
     }
 
     .project-card {
-      background: rgba(255,255,255,0.28);
+      background: #fcf9f6;
       border-radius: 28px;
-      padding: 1.6rem 1.3rem;
-      border: 1px solid rgba(255,255,255,0.5);
-      transition: all 0.2s;
+      padding: 1.8rem 1.6rem;
+      border: 1px solid #eee7e0;
+      transition: 0.1s;
     }
 
     .project-card:hover {
-      background: rgba(255,255,255,0.5);
+      background: #f9f3ec;
+      border-color: #d6cdc2;
     }
 
     .project-title {
       display: flex;
       align-items: center;
-      gap: 0.7rem;
-      margin-bottom: 0.9rem;
+      gap: 0.8rem;
+      margin-bottom: 0.8rem;
     }
 
     .project-title i {
-      width: 22px;
-      height: 22px;
-      stroke: #235f78;
+      width: 26px;
+      height: 26px;
+      stroke: #2b6d8f;
     }
 
     .project-title a {
-      font-size: 1.2rem;
+      font-size: 1.35rem;
       font-weight: 480;
       color: #103746;
       text-decoration: none;
@@ -307,227 +243,190 @@
     }
 
     .project-title a:hover {
-      border-bottom-color: #31718b;
+      border-bottom-color: #548ca0;
     }
 
     .project-desc {
-      font-size: 0.92rem;
-      color: #1d3c4b;
-      margin-left: 2rem;
+      color: #385e72;
+      font-size: 0.95rem;
+      margin-left: 2.2rem;
+      margin-bottom: 1rem;
     }
 
-    /* footer tiny */
-    .footnote {
+    .project-tag {
+      display: inline-block;
+      background: #e7dfd7;
+      padding: 0.25rem 1rem;
+      border-radius: 30px;
+      font-size: 0.75rem;
+      color: #3e5a69;
+      margin-left: 2.2rem;
+      border: 1px solid #dad0c5;
+    }
+
+    /* footer/note */
+    .footer-note {
       text-align: right;
       font-size: 0.85rem;
-      opacity: 0.65;
-      margin-top: 0.5rem;
+      color: #8198a5;
+      margin-top: 1rem;
     }
 
-    /* responsiveness */
-    @media (max-width: 600px) {
-      body { padding: 1rem; }
-      .glass-card { padding: 1.5rem; }
-      .profile-row { gap: 1.2rem; }
-      .title-section h1 { font-size: 2rem; }
-      .summary-text { max-width: 100%; }
-    }
-
-    /* feather icons color */
-    i {
-      fill: none;
+    @media (max-width: 750px) {
+      .skills-grid { grid-template-columns: repeat(2, 1fr); }
+      .projects-grid { grid-template-columns: 1fr; }
+      .intro-row { flex-direction: column; align-items: start; }
+      .about-text p { max-width: 100%; }
+      .section-card { padding: 1.8rem; }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <!-- profile card: name, contact, placeholder avatar -->
-    <div class="glass-card">
-      <div class="profile-row">
-        <div class="avatar-frame">
-          <!-- placeholder for your future profile picture, now minimal 'user' icon -->
-          <div class="avatar-placeholder" id="avatarPlaceholder">
-            <i data-feather="user"></i>
-          </div>
-        </div>
-        <div class="title-section">
-          <h1>Yossef Haytham</h1>
-          <div class="subhead">aspiring data analyst · cs student</div>
-          <div class="contact-links">
-            <a href="mailto:yossefhaytham700@gmail.com" class="contact-item">
-              <i data-feather="mail"></i><span>email</span>
-            </a>
-            <a href="tel:+201014852966" class="contact-item">
-              <i data-feather="phone"></i><span>+20 101 485 2966</span>
-            </a>
-            <a href="https://linkedin.com/in/yossefhaythamhommamed" target="_blank" class="contact-item">
-              <i data-feather="linkedin"></i><span>linkedin</span>
-            </a>
-            <span class="contact-item">
-              <i data-feather="map-pin"></i><span>Egypt</span>
-            </span>
-          </div>
-        </div>
-      </div>
-      <div class="summary-text">
-        data strategy & analytics solutions · transforming complex data into insights. dedicated to data literacy and scalable workflows.
-      </div>
-    </div>
+<div class="container">
 
-    <!-- EDUCATION & COURSES combined (two-column style) -->
-    <div class="glass-card">
-      <div class="section-header">
-        <i data-feather="book-open"></i>
-        <h2>education & courses</h2>
+  <!-- intro card: profile + name + contacts (like Amr's top area) -->
+  <div class="section-card">
+    <div class="intro-row">
+      <div class="avatar-frame avatar-placeholder">
+        <i data-feather="user"></i>   <!-- placeholder for your future photo -->
       </div>
-      <div class="edu-row">
-        <!-- degree -->
-        <div class="edu-item">
-          <h3>B.Sc. computer & information science</h3>
-          <div>Mansoura University, Egypt</div>
-          <div class="edu-meta">
-            <i data-feather="calendar"></i><span>2024 – present</span>
-          </div>
-        </div>
-        <!-- three courses (with dates) -->
-        <div class="course-item">
-          <h3>Python programming specialization</h3>
-          <div>National Telecommunication Institute (NTI)</div>
-          <div class="course-meta"><i data-feather="award"></i><span>Jun 2025</span></div>
-        </div>
-        <div class="course-item">
-          <h3>Operating System Basics</h3>
-          <div>Cisco Networking Academy</div>
-          <div class="course-meta"><i data-feather="award"></i><span>Mar 2025</span></div>
-        </div>
-        <div class="course-item">
-          <h3>Data Analysis Professional</h3>
-          <div>Digital Egypt Pioneers (DEPI)</div>
-          <div class="course-meta"><i data-feather="award"></i><span>Dec 2025</span></div>
+      <div class="intro-text">
+        <h1>Yossef Haytham</h1>
+        <div class="intro-tagline">Data Analyst & CS Student · Mansoura University</div>
+        <div class="contact-row">
+          <a href="mailto:yossefhaytham700@gmail.com" class="contact-link"><i data-feather="mail"></i> yossefhaytham700</a>
+          <a href="tel:+201014852966" class="contact-link"><i data-feather="phone"></i> +20 101 485 2966</a>
+          <a href="https://linkedin.com/in/yossefhaythamhommamed" target="_blank" class="contact-link"><i data-feather="linkedin"></i> LinkedIn</a>
+          <span class="contact-link"><i data-feather="map-pin"></i> Egypt</span>
         </div>
       </div>
-    </div>
-
-    <!-- SKILLS (grouped like resume, but minimalist outline) -->
-    <div class="glass-card">
-      <div class="section-header">
-        <i data-feather="code"></i>
-        <h2>technical skills</h2>
-      </div>
-      <div class="skills-grid">
-        <!-- data analytics & BI -->
-        <div class="skill-cluster">
-          <h3><i data-feather="bar-chart-2"></i> data analytics & BI</h3>
-          <div class="skill-items">
-            <span class="skill-tag">PostgreSQL</span>
-            <span class="skill-tag">Power Query</span>
-            <span class="skill-tag">Power Pivot</span>
-            <span class="skill-tag">Pivot Tables</span>
-            <span class="skill-tag">Python (pandas)</span>
-            <span class="skill-tag">statistical analysis</span>
-          </div>
-        </div>
-        <!-- cs foundations -->
-        <div class="skill-cluster">
-          <h3><i data-feather="cpu"></i> CS foundations</h3>
-          <div class="skill-items">
-            <span class="skill-tag">OS</span>
-            <span class="skill-tag">data structures</span>
-            <span class="skill-tag">algorithms</span>
-            <span class="skill-tag">OOP</span>
-            <span class="skill-tag">modular code</span>
-          </div>
-        </div>
-        <!-- programming proficiency -->
-        <div class="skill-cluster">
-          <h3><i data-feather="terminal"></i> programming</h3>
-          <div class="skill-items">
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">C#</span>
-            <span class="skill-tag">Assembly</span>
-            <span class="skill-tag">software arch</span>
-          </div>
-        </div>
-        <!-- problem solving -->
-        <div class="skill-cluster">
-          <h3><i data-feather="zap"></i> technical problem solving</h3>
-          <div class="skill-items">
-            <span class="skill-tag">algorithmic optimization</span>
-            <span class="skill-tag">data accuracy</span>
-            <span class="skill-tag">requirement analysis</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- PROJECTS: four repos (3 analysis + 1 python learning) -->
-    <div class="glass-card">
-      <div class="section-header">
-        <i data-feather="folder"></i>
-        <h2>featured projects</h2>
-      </div>
-      <div class="projects-grid">
-        <!-- countries analysis -->
-        <div class="project-card">
-          <div class="project-title">
-            <i data-feather="globe"></i>
-            <a href="https://github.com/yossefhaytham/Countries-of-the-World-Analysis" target="_blank">countries of the world</a>
-          </div>
-          <div class="project-desc">exploratory data analysis · global metrics & patterns</div>
-        </div>
-        <!-- superstore 2019 -->
-        <div class="project-card">
-          <div class="project-title">
-            <i data-feather="shopping-cart"></i>
-            <a href="https://github.com/yossefhaytham/Super-Store-2019-analysis" target="_blank">super store 2019</a>
-          </div>
-          <div class="project-desc">sales & profit analysis · BI dashboard ready</div>
-        </div>
-        <!-- energy consumption -->
-        <div class="project-card">
-          <div class="project-title">
-            <i data-feather="activity"></i>
-            <a href="https://github.com/yossefhaytham/Energy-Consumption" target="_blank">energy consumption</a>
-          </div>
-          <div class="project-desc">time series · efficiency & sustainability</div>
-        </div>
-        <!-- python learning (teaching) -->
-        <div class="project-card">
-          <div class="project-title">
-            <i data-feather="book"></i>
-            <a href="https://github.com/yossefhaytham/Python_Learning" target="_blank">python learning</a>
-          </div>
-          <div class="project-desc">explain & teach python · examples & notes</div>
-        </div>
-      </div>
-      <!-- subtle hint for more -->
-      <div style="margin-top: 1rem; font-style: italic; opacity: 0.7;">➕ end‑to‑end analytical solutions · data storytelling</div>
-    </div>
-
-    <!-- small footnote (like calm credit) -->
-    <div class="footnote">
-      <span>— based on Mansoura · data‑informed mindset —</span>
     </div>
   </div>
 
-  <!-- feather icons replacement script -->
-  <script>
-    feather.replace({ width: '1em', height: '1em', stroke: 'currentColor' });
-    // also adjust placeholder avatar (avoid double icon)
-    document.querySelectorAll('.avatar-placeholder i').forEach(el => {
-      if (el.getAttribute('data-feather') === 'user') {
-        el.style.width = '60px';
-        el.style.height = '60px';
-        el.style.stroke = '#2b4d62';
-      }
-    });
-  </script>
+  <!-- about me section – rewritten to be similar to Amr's style but reflect your resume -->
+  <div class="section-card">
+    <div class="about-head">
+      <i data-feather="user-check"></i>
+      <h2>About Me</h2>
+    </div>
+    <div class="about-text">
+      <p>I help turn complex data into clear strategic insights. As a Computer Science student at Mansoura University, I focus on building scalable data workflows, analytical solutions, and business intelligence that drives decisions. I don't just write queries — I design data narratives.</p>
+      <p>I combine strong Python, SQL, and visualization skills with a deep understanding of data structures and algorithms. Whether it's building end‑to‑end analytics or teaching Python to others, I believe in fostering data literacy and confidence. Outside study, I explore open‑source data projects and contribute to analytical content.</p>
+    </div>
+  </div>
 
-  <!-- optional: simple hover improve for avatar (just placeholder) -->
-  <style>
-    .avatar-placeholder {
-      background: #dee8f0;  /* very light pastel */
-    }
-  </style>
+  <!-- skills section – 4 groups exactly like reference, but with your resume items -->
+  <div class="section-card">
+    <div class="about-head">
+      <i data-feather="grid"></i>
+      <h2>Skills & Expertise</h2>
+    </div>
+    <div class="skills-grid">
+      <!-- group 1: data analytics & BI (like Amr's "Data Analysis & BI") -->
+      <div class="skill-group">
+        <h3><i data-feather="bar-chart-2"></i> Data Analytics & BI</h3>
+        <ul class="skill-items">
+          <li class="skill-item">Data Visualization</li>
+          <li class="skill-item">SQL & PostgreSQL</li>
+          <li class="skill-item">Power Query / Pivot</li>
+          <li class="skill-item">Statistical Analysis</li>
+          <li class="skill-item">Python (pandas)</li>
+        </ul>
+      </div>
+      <!-- group 2: computer science foundations (like "Tools & Technologies") -->
+      <div class="skill-group">
+        <h3><i data-feather="cpu"></i> CS Foundations</h3>
+        <ul class="skill-items">
+          <li class="skill-item">Operating Systems</li>
+          <li class="skill-item">Data Structures & Algo</li>
+          <li class="skill-item">OOP (C#, Python)</li>
+          <li class="skill-item">Assembly basics</li>
+          <li class="skill-item">Algorithmic optimization</li>
+        </ul>
+      </div>
+      <!-- group 3: programming proficiency (like "Training & Development") but using your skills -->
+      <div class="skill-group">
+        <h3><i data-feather="code"></i> Programming</h3>
+        <ul class="skill-items">
+          <li class="skill-item">Python (advanced)</li>
+          <li class="skill-item">C# / .NET</li>
+          <li class="skill-item">Modular design</li>
+          <li class="skill-item">Clean code principles</li>
+          <li class="skill-item">Debugging & profiling</li>
+        </ul>
+      </div>
+      <!-- group 4: technical problem solving (like Amr's "Extra Personal Skills" but relevant) -->
+      <div class="skill-group">
+        <h3><i data-feather="zap"></i> Problem Solving</h3>
+        <ul class="skill-items">
+          <li class="skill-item">Requirement analysis</li>
+          <li class="skill-item">Data accuracy</li>
+          <li class="skill-item">ETL thinking</li>
+          <li class="skill-item">Performance tuning</li>
+          <li class="skill-item">Analytical mindset</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- featured projects – exactly 4 cards, with the 4th renamed professionally -->
+  <div class="section-card">
+    <div class="about-head">
+      <i data-feather="folder"></i>
+      <h2>Featured Projects</h2>
+    </div>
+    <div class="projects-grid">
+      <!-- project 1: countries analysis -->
+      <div class="project-card">
+        <div class="project-title">
+          <i data-feather="globe"></i>
+          <a href="https://github.com/yossefhaytham/Countries-of-the-World-Analysis" target="_blank">Countries of the World</a>
+        </div>
+        <div class="project-desc">Comprehensive EDA on global socio-economic data – data cleaning, correlation analysis and visual insights.</div>
+        <span class="project-tag">pandas · seaborn</span>
+      </div>
+      <!-- project 2: superstore 2019 -->
+      <div class="project-card">
+        <div class="project-title">
+          <i data-feather="shopping-cart"></i>
+          <a href="https://github.com/yossefhaytham/Super-Store-2019-analysis" target="_blank">Superstore 2019 Analysis</a>
+        </div>
+        <div class="project-desc">Sales & profit deep dive · KPI tracking, customer segmentation and interactive dashboards.</div>
+        <span class="project-tag">Power BI · SQL</span>
+      </div>
+      <!-- project 3: energy consumption -->
+      <div class="project-card">
+        <div class="project-title">
+          <i data-feather="activity"></i>
+          <a href="https://github.com/yossefhaytham/Energy-Consumption" target="_blank">Energy Consumption</a>
+        </div>
+        <div class="project-desc">Time‑series analysis of energy usage patterns · forecasting and efficiency recommendations.</div>
+        <span class="project-tag">Python · statsmodels</span>
+      </div>
+      <!-- project 4: python learning (professional name: Python Instructional Lab) -->
+      <div class="project-card">
+        <div class="project-title">
+          <i data-feather="book-open"></i>
+          <a href="https://github.com/yossefhaytham/Python_Learning" target="_blank">Python Instructional Lab</a>
+        </div>
+        <div class="project-desc">Structured explanations, code patterns, and teaching examples — from basics to data analysis.</div>
+        <span class="project-tag">education · jupyter</span>
+      </div>
+    </div>
+    <!-- subtle extra line similar to reference (they have "What People Say" – we omit and keep minimal) -->
+  </div>
+
+  <!-- calm footer (like Amr's clean ending) -->
+  <div class="footer-note">
+    <span>data-informed · curious · Cairo / Mansoura</span>
+  </div>
+</div>
+
+<!-- feather icon replacement -->
+<script>
+  feather.replace({ width: '1em', height: '1em', stroke: 'currentColor' });
+  // adjust avatar icon size
+  document.querySelector('.avatar-placeholder i').style.stroke = '#4d3f35';
+</script>
 </body>
 </html>
